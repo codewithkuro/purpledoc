@@ -37,6 +37,13 @@ export const data = [
     description: `Use Silk wallet to securely create and store your identity`,
     descriptionColor: "text-strong",
     icon: <UserExpert color="plain" />,
+    clickHandler: () => {
+      try {
+        silk.login();
+      } catch (error) {
+        console.log("Silk sdk setup failed: ", error);
+      }
+    },
   },
   {
     cta: "Issue an Attestation",

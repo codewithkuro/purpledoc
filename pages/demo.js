@@ -1,7 +1,5 @@
 import Head from "next/head";
-
 import { Anchor, Avatar, Box, Footer, Heading, Nav, Paragraph } from "grommet";
-
 import { Github, Slack } from "grommet-icons";
 
 export default function Home() {

@@ -3,7 +3,15 @@ import PropTypes from "prop-types";
 import { Button, Card, CardBody, Heading, Text } from "grommet";
 
 export const DashboardCard = ({ card, ...rest }) => {
-  const { background, cta, description, descriptionColor, icon, title } = card;
+  const {
+    background,
+    cta,
+    description,
+    descriptionColor,
+    icon,
+    title,
+    clickHandler,
+  } = card;
   return (
     <Card background={background || "background"} fill {...rest} pad="medium">
       <CardBody gap="small" align="start" flex="grow">
@@ -12,7 +20,11 @@ export const DashboardCard = ({ card, ...rest }) => {
           {title}
         </Heading>
         <Text color={descriptionColor}>{description}</Text>
-        {typeof cta === "string" ? <Button label={cta} secondary /> : cta}
+        {typeof cta === "string" ? (
+          <Button label={cta} secondary onClick={clickHandler} />
+        ) : (
+          cta
+        )}
       </CardBody>
     </Card>
   );

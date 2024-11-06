@@ -8,7 +8,7 @@ import { DashboardGrid } from "./DashboardGrid";
 import { DashboardFooter } from "./DashboardFooter";
 import { Greeting } from "./Greeting";
 
-export const AppDashboard = () => {
+export const AppDashboard = (props) => {
   const [user, setUser] = useState(defaultUser);
   const size = useContext(ResponsiveContext);
 
