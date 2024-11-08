@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { initSilk } from "@silk-wallet/silk-wallet-sdk";
 import { WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { config } from "@/lib/config";
+import { config } from "../config/config";
 import WalletContext from "./WalletContext";
 import { WalletClient, createWalletClient, custom } from "viem";
 import { mainnet, sepolia } from "viem/chains";
@@ -60,7 +60,7 @@ export default function Providers({ children }) {
         setConnected(false);
       }
     };
-    checkConnection();
+    // checkConnection();
   }, [initializeWalletClient]);
 
   return (

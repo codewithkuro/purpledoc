@@ -20,11 +20,7 @@ export const DashboardCard = ({ card, ...rest }) => {
           {title}
         </Heading>
         <Text color={descriptionColor}>{description}</Text>
-        {typeof cta === "string" ? (
-          <Button label={cta} secondary onClick={clickHandler} />
-        ) : (
-          cta
-        )}
+        {typeof cta === "string" ? <Button label={cta} secondary /> : cta}
       </CardBody>
     </Card>
   );
@@ -38,5 +34,6 @@ DashboardCard.propTypes = {
     descriptionColor: PropTypes.string,
     icon: PropTypes.element,
     title: PropTypes.string,
+    clickHandler: PropTypes.func,
   }).isRequired,
 };

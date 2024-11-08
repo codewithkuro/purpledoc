@@ -71,7 +71,7 @@ export const AppIdentity = forwardRef(
     );
   },
 );
-
+AppIdentity.displayName = "AppIdentity";
 AppIdentity.propTypes = {
   brand: PropTypes.string.isRequired,
   logoOnly: PropTypes.bool,

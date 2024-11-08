@@ -15,7 +15,7 @@ import {
 } from "grommet-icons";
 
 // styled component to create custom orange button
-const StyledButton = styled(Button)`
+export const StyledButton = styled(Button)`
   background: ${(props) => props.theme.global.colors["orange!"]};
   color: ${(props) => props.theme.global.colors["text-strong"].light};
   &:hover {
@@ -29,7 +29,7 @@ export const data = [
     cta: (
       <StyledButton
         label="Register your Personhood"
-        href="https://silksecure.net/holonym/silk/gov-id/issuance/prereqs"
+        // href="https://silksecure.net/holonym/silk/gov-id/issuance/prereqs"
       />
     ),
     background: "yellow",
@@ -37,13 +37,6 @@ export const data = [
     description: `Use Silk wallet to securely create and store your identity`,
     descriptionColor: "text-strong",
     icon: <UserExpert color="plain" />,
-    clickHandler: () => {
-      try {
-        silk.login();
-      } catch (error) {
-        console.log("Silk sdk setup failed: ", error);
-      }
-    },
   },
   {
     cta: "Issue an Attestation",
