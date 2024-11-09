@@ -1,14 +1,16 @@
+"use client";
 import { useEffect, useState } from "react";
 import { VeraxSdk } from "@verax-attestation-registry/verax-sdk";
 import { useAccount } from "wagmi";
+import { Button } from "grommet";
 
 const SCHEMA = "(bool hasCompletedTutorial)";
 
 const CreateSchema = ({ veraxSdk, getTxHash, getSchemaId }) => {
-  const [txHash, setTxHash] = useState < string > "";
-  const [error, setError] = useState < string > "";
-  const [schemaId, setSchemaId] = useState < string > "";
-  const [schemaExists, setSchemaExists] = useState < boolean > false;
+  const [txHash, setTxHash] = useState("");
+  const [error, setError] = useState("");
+  const [schemaId, setSchemaId] = useState("");
+  const [schemaExists, setSchemaExists] = useState("false");
 
   const { isConnected } = useAccount();
 
@@ -50,9 +52,11 @@ const CreateSchema = ({ veraxSdk, getTxHash, getSchemaId }) => {
 
   return (
     <>
-      <button onClick={createSchema} disabled={!isConnected || schemaExists}>
-        Send transaction
-      </button>
+      <Button
+        onClick={createSchema}
+        disabled={!isConnected || schemaExists}
+        label="Send transaction"
+      ></Button>
       {schemaExists && <p>{`Schema already exists, with ID ${schemaId} !`}</p>}
       {txHash !== "" && <p>{`Transaction with hash ${txHash} sent!`}</p>}
       {error !== "" && <p style={{ color: "red" }}>{error}</p>}

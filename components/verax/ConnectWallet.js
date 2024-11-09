@@ -24,15 +24,12 @@ const ConnectWallet = () => {
   }, [address]);
 
   return (
-    <>
-      <Text>{truncatedAddress}</Text>
-      <Button
-        width="medium"
-        onClick={() => open()}
-        label={isConnected ? (ensName ?? truncatedAddress) : "connect wallet"}
-        primary
-      />
-    </>
+    <Button
+      width="medium"
+      onClick={() => open()}
+      label={isConnected ? (ensName ?? truncatedAddress) : "connect wallet"}
+      primary
+    />
   );
 };
 
