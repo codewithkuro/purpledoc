@@ -5,6 +5,7 @@ import { DashboardCard } from "./DashboardCard";
 import { createWalletClient, custom } from "viem";
 import { mainnet } from "viem/chains";
 import { useWallet } from "./WalletContext";
+import { useRouter } from "next/navigation";
 
 export const DashboardGrid = ({ ...rest }) => {
   const {
@@ -15,6 +16,8 @@ export const DashboardGrid = ({ ...rest }) => {
     userAddress,
     setUserAddress,
   } = useWallet();
+
+  const router = useRouter();
 
   async function login(e) {
     e.preventDefault();
@@ -44,6 +47,12 @@ export const DashboardGrid = ({ ...rest }) => {
   }
 
   data[0].cta = <StyledButton label="Register here" onClick={login} />;
+  data[1].cta = (
+    <StyledButton
+      label="Create an Attestation"
+      onClick={(e) => router.push("/governance")}
+    />
+  );
 
   const size = useContext(ResponsiveContext);
   return (

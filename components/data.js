@@ -39,7 +39,6 @@ export const data = [
     icon: <UserExpert color="plain" />,
   },
   {
-    cta: "Issue an Attestation",
     background: "#d2b4de",
     title: "NGOs and Refugee Representatives",
     description:
