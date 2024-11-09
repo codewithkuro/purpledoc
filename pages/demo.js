@@ -14,7 +14,6 @@ export default function Home() {
       margin={{ horizontal: "auto" }}
       width={{ max: "xlarge" }}
       height={{ min: "100%" }}
-      width={{ max: "xlarge" }}
     >
       <Head>
         <title>Create Next App</title>

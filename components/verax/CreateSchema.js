@@ -4,7 +4,7 @@ import { VeraxSdk } from "@verax-attestation-registry/verax-sdk";
 import { useAccount } from "wagmi";
 import { Button } from "grommet";
 
-const SCHEMA = "(bool hasCompletedTutorial)";
+const SCHEMA = "(bool identityHasBeenVerified)";
 
 const CreateSchema = ({ veraxSdk, getTxHash, getSchemaId }) => {
   const [txHash, setTxHash] = useState("");
@@ -31,9 +31,9 @@ const CreateSchema = ({ veraxSdk, getTxHash, getSchemaId }) => {
   const createSchema = async () => {
     try {
       const receipt = await veraxSdk.schema.create(
-        "Tutorial Schema",
-        "This Schema is used for the tutorial",
-        "https://ver.ax/#/tutorials",
+        "Purpledoc Personhood Verified Schema",
+        "This schema shows that the holder's individual identity has been verified by issuer",
+        "http://purpledoc.codegarage.cloud",
         SCHEMA,
       );
       if (receipt.transactionHash) {

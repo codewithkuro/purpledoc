@@ -46,7 +46,14 @@ export const DashboardGrid = ({ ...rest }) => {
     setUserAddress("");
   }
 
-  data[0].cta = <StyledButton label="Register here" onClick={login} />;
+  // data[0].cta = <StyledButton label="Register here" onClick={login} />;
+  data[0].cta = (
+    <StyledButton
+      label="Register here"
+      href="https://silksecure.net/holonym/silk/gov-id/issuance/prereqs"
+    />
+  );
+
   data[1].cta = (
     <StyledButton
       label="Create an Attestation"
