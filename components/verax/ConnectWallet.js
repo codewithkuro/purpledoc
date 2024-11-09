@@ -29,7 +29,7 @@ const ConnectWallet = () => {
       <Button
         width="medium"
         onClick={() => open()}
-        label={isConnected ? (ensName ?? truncatedAddress) : "CONNECT WALLET"}
+        label={isConnected ? (ensName ?? truncatedAddress) : "connect wallet"}
         primary
       />
     </>

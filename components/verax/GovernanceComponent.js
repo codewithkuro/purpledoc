@@ -82,11 +82,5 @@ export default function GovernanceComponent() {
     setAttestationId(receipt.logs[0].topics[1]);
   };
 
-  return (
-    <Page>
-      <Text>This is the governance page.</Text>
-      <Heading level={2}>Connect wallet</Heading>
-      <ConnectWallet />
-    </Page>
-  );
+  return <ConnectWallet />;
 }

@@ -50,7 +50,7 @@ export const DashboardGrid = ({ ...rest }) => {
   data[1].cta = (
     <StyledButton
       label="Create an Attestation"
-      onClick={(e) => router.push("/governance")}
+      onClick={(e) => router.push("/gov")}
     />
   );
 
