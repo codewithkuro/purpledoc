@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 // eslint-disable-next-line import/no-unresolved
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { useAccount, useEnsName } from "wagmi";
+import { Button, Text } from "grommet";
 
 const ConnectWallet = () => {
   const [truncatedAddress, setTruncatedAddress] = useState();
@@ -23,9 +24,15 @@ const ConnectWallet = () => {
   }, [address]);
 
   return (
-    <button onClick={() => open()} className={"connect-wallet"}>
-      {isConnected ? (ensName ?? truncatedAddress) : "CONNECT WALLET"}
-    </button>
+    <>
+      <Text>{truncatedAddress}</Text>
+      <Button
+        width="medium"
+        onClick={() => open()}
+        label={isConnected ? (ensName ?? truncatedAddress) : "CONNECT WALLET"}
+        primary
+      />
+    </>
   );
 };
 
