@@ -119,7 +119,7 @@ export default function GovernanceComponent() {
           <Anchor onClick={goBack}>
             <Heading level={4}>Go back</Heading>
           </Anchor>
-          <DocumentPpt size="xlarge" color="brand" />
+          <DocumentPpt size="xlarge" color="brand2" />
           <Heading>Purpledoc Passport Governance Centre</Heading>
 
           <Box size="medium"></Box>
@@ -186,7 +186,7 @@ export default function GovernanceComponent() {
           )}
 
           <Footer pad={{ vertical: "large" }}>
-            <Text size="small">Purpledoc Passport 2024</Text>
+            <Text size="small">© 2024 Purpledoc Passport</Text>
           </Footer>
         </Box>
       </Box>

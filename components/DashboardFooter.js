@@ -1,7 +1,7 @@
 // DashboardFooter.js
 import React from "react";
 import { Box, Button, Footer, Text } from "grommet";
-import { Hpe } from "grommet-icons";
+import { DocumentPpt } from "grommet-icons";
 
 const footerButtons = [
   {
@@ -11,10 +11,6 @@ const footerButtons = [
   {
     label: "Privacy",
     href: "//www.hpe.com/us/en/legal/privacy.html",
-  },
-  {
-    label: "Do Not Sell My Personal Information",
-    href: "//www.hpe.com/us/en/legal/privacy.html#datacollection",
   },
 ];
 
@@ -29,7 +25,7 @@ export const DashboardFooter = () => {
       wrap
     >
       <Box direction="row" gap="medium">
-        <Hpe color="plain" />
+        <DocumentPpt color="brand2" />
         <Text size="small">© {year} Purpledoc Passport</Text>
       </Box>
       <Box align="center" direction="row" wrap>

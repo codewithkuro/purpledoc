@@ -83,7 +83,7 @@ const SidebarHeader = () => (
       >
         <Text size="large">A</Text>
       </Avatar>
-      <TextEmphasis>AT&T Corporation</TextEmphasis>
+      <TextEmphasis>Purpledoc Passport</TextEmphasis>
       <Text size="small">ID: 0a7141c332ec4c4aae04aa4b8fe59deb</Text>
     </Box>
     <Button label="Switch Account" secondary />

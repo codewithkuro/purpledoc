@@ -28,23 +28,6 @@ export const HeaderNav = () => {
           <Button icon={<HomeRounded />} a11yTitle="Home" title="Home" />
         </>
       )}
-      <DropButton
-        dropContent={<UserDetails />}
-        dropProps={{ align: { top: "bottom", right: "right" } }}
-        open={open}
-        onOpen={() => setOpen(true)}
-        onClose={() => setOpen(false)}
-      >
-        {!user.image ? (
-          <Avatar background="blue!" flex={false}>
-            <Text size="large" color="text-strong">
-              JD
-            </Text>
-          </Avatar>
-        ) : (
-          <Avatar src={user.image} />
-        )}
-      </DropButton>
     </Nav>
   ) : null;
 };
