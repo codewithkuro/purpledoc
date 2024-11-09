@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { VeraxSdk } from "@verax-attestation-registry/verax-sdk";
 import { useAccount } from "wagmi";
+import { Button } from "grommet";
 
 const IssueAttestation = ({ veraxSdk, getTxHash, schemaId, portalId }) => {
   const [txHash, setTxHash] = useState("");
@@ -38,9 +39,11 @@ const IssueAttestation = ({ veraxSdk, getTxHash, schemaId, portalId }) => {
 
   return (
     <>
-      <button onClick={issueAttestation} disabled={!isConnected}>
-        Send transaction
-      </button>
+      <Button
+        onClick={issueAttestation}
+        disabled={!isConnected}
+        label="Send transaction"
+      ></Button>
       {txHash !== "" && <p>{`Transaction with hash ${txHash} sent!`}</p>}
       {error !== "" && <p style={{ color: "red" }}>{error}</p>}
     </>

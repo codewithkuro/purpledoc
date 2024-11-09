@@ -128,6 +128,7 @@ export default function GovernanceComponent() {
           </Paragraph>
 
           <Heading level={3}>Steps</Heading>
+
           <Paragraph>1. Connect a wallet</Paragraph>
           <Box pad="small" background="light-2" width="small">
             <ConnectWallet />
@@ -145,95 +146,49 @@ export default function GovernanceComponent() {
             </Box>
           )}
 
-          <Paragraph>3. Create a Portal</Paragraph>
-          <Box background="light-1" width="medium">
-            <CreatePortal veraxSdk={veraxSdk} getTxHash={handlePortalTx} />
-          </Box>
+          {veraxSdk && schemaId && (
+            <>
+              <Paragraph>3. Create a Portal</Paragraph>
+              <Box background="light-1" width="medium">
+                <CreatePortal veraxSdk={veraxSdk} getTxHash={handlePortalTx} />
+              </Box>
+            </>
+          )}
 
-          <Paragraph fill>
-            The application and the page you are currently viewing is the
-            default page that is created after bootstrapping a Next.js with{" "}
-            <Anchor href="https://nextjs.org/docs/api-reference/create-next-app">
-              Create Next App
-            </Anchor>
-          </Paragraph>
+          {veraxSdk && schemaId && portalId && (
+            <>
+              <Paragraph>4. Issue an Attestation</Paragraph>
+              <Box background="light-1" width="medium">
+                <IssueAttestation
+                  veraxSdk={veraxSdk}
+                  getTxHash={handleAttestationTx}
+                  schemaId={schemaId}
+                  portalId={portalId}
+                />
+              </Box>
+            </>
+          )}
 
-          <Paragraph fill>
-            To the default Create Next App application we added the grommet
-            dependency, and replaced the HTML tags with actual grommet
-            components, as a result you are viewing the same default page, with
-            only Grommet components.
-          </Paragraph>
+          {veraxSdk && attestationId && (
+            <>
+              <Paragraph>Check the issued attestation</Paragraph>
+              <Box background="light-1" size="medium">
+                {attestationId ? (
+                  <AttestationPreview
+                    veraxSdk={veraxSdk}
+                    attestationId={attestationId}
+                  />
+                ) : (
+                  <Text>Send the transaction and wait for confirmation.</Text>
+                )}
+              </Box>
+            </>
+          )}
 
-          <Paragraph fill>
-            Feel free to shoot the Grommet team any feedback and questions by
-            using this page footer contact info.
-          </Paragraph>
-
-          <Paragraph fill>
-            Get started by editing <code>pages/index.js</code>
-          </Paragraph>
-
-          <Box>
-            <Anchor href="https://nextjs.org/docs">
-              <Heading level={3}>Documentation &rarr;</Heading>
-            </Anchor>
-            <Paragraph>
-              Find in-depth information about Next.js features and API.
-            </Paragraph>
-
-            <Anchor href="https://nextjs.org/learn">
-              <Heading level={3}>Learn &rarr;</Heading>
-            </Anchor>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-
-            <Anchor href="https://github.com/vercel/next.js/tree/master/examples">
-              <Heading level={3}>Examples &rarr;</Heading>
-            </Anchor>
-            <Paragraph>
-              Discover and deploy boilerplate example Next.js projects.
-            </Paragraph>
-
-            <Anchor href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-              <Heading level={3}>Deploy &rarr;</Heading>
-            </Anchor>
-            <Paragraph>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </Paragraph>
-          </Box>
-
-          <Anchor
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Next.js Powered by Vercel
-          </Anchor>
+          <Footer pad={{ vertical: "large" }}>
+            <Text size="small">Purpledoc Passport 2024</Text>
+          </Footer>
         </Box>
-        <Footer
-          background="light-2"
-          pad={{ vertical: "small", horizontal: "medium" }}
-        >
-          {/* <Anchor href="https://github.com/ShimiSun">
-            <Avatar src={gravatarLink} />
-          </Anchor>
-          <Nav direction="row" align="center">
-            <Anchor
-              a11yTitle="Reach out to the Grommet Community on Slack"
-              href="https://slack-invite.grommet.io/"
-              icon={<Slack color="plain" />}
-              target="_blank"
-              rel="noreferrer noopener"
-            />
-            <Anchor
-              a11yTitle="Github repository"
-              href="https://github.com/grommet/nextjs-boilerplate"
-              icon={<Github color="black" />}
-              target="_blank"
-              rel="noreferrer noopener"
-            />
-          </Nav> */}
-        </Footer>
       </Box>
     </Page>
   );
